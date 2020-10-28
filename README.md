@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Environment Variables
+
+In order to use the Giphy API you have to first create a Giphy App on their dev platform. By doing so, you will obtain a API Token which will be mandatory for using their api. As this is not created as a fully production project I added that "kind of private" information as part of the yarn `start` and `build` commands trying to emulate env variables. The idea is that when this project gets deployed, that information that lives within the repo codebase will be removed and it will be replaced by env variables injected by the server running the app.
+
 ## Available Scripts
 
 In the project directory, you can run:
