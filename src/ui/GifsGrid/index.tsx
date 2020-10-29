@@ -22,6 +22,7 @@ const GifsGrid: React.FC<GifsGridProps> = (props: GifsGridProps) => {
             key={gif.images.original.url}
             src={gif.images.original.url}
             alt={gif.title}
+            loading="lazy"
           />
         ))}
       </main>
