@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import api, { API_CONFIG } from './api';
 import logo from './logo.svg';
 
 function App() {
+  useEffect(() => {
+    // This is just for testing the api functionality
+    api.get(API_CONFIG.ENDPOINTS.TRENDING, { limit: 10 }).then((data) => console.log(data));
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
