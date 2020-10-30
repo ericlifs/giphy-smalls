@@ -1,5 +1,5 @@
 import React from 'react';
-import TrendingGifs from './containers/Trending';
+import TrendingGifs from './components/TrendingGifs';
 
 function App() {
   return (
