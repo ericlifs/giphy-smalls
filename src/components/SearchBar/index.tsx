@@ -1,13 +1,11 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
-import api from '../../api';
-import API_CONFIG from '../../api/config';
+import { observer } from 'mobx-react-lite';
+import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
 import useDebounce from '../../hooks/useDebounce';
-import { Gif } from '../../interfaces/gifs';
+import { GifsStoreContext } from '../../stores/GifsStore';
 import './index.scss';
 
-interface ISearchBarProps {}
-
-const SearchBar: React.FC<ISearchBarProps> = () => {
+const SearchBar: React.FC = () => {
+  const gifsStore = useContext(GifsStoreContext);
   const [term, setTerm] = useState<string>('');
   const debouncedTerm = useDebounce<string>(term, 600);
 
@@ -16,14 +14,16 @@ const SearchBar: React.FC<ISearchBarProps> = () => {
   };
 
   useEffect(() => {
+    if (term === '') {
+      gifsStore.clearSearchResults();
+    }
+  }, [term]);
+
+  useEffect(() => {
     const trimmedTerm = debouncedTerm.trim();
 
     if (trimmedTerm !== '') {
-      api
-        .get<Gif[]>(API_CONFIG.ENDPOINTS.SEARCH, { limit: 20, q: trimmedTerm })
-        .then((data: Gif[]) => {
-          console.log(data);
-        });
+      gifsStore.searchGifsByTerm(trimmedTerm);
     }
   }, [debouncedTerm]);
 
@@ -39,4 +39,4 @@ const SearchBar: React.FC<ISearchBarProps> = () => {
   );
 };
 
-export default SearchBar;
+export default observer(SearchBar);
