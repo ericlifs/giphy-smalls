@@ -31,7 +31,7 @@ class GifsStore {
       return `Gifs for ${this.searchTerm}`;
     }
 
-    if (!this.searchTerm) {
+    if (this.searchTerm === '') {
       return 'Trending gifs';
     }
 
@@ -39,7 +39,7 @@ class GifsStore {
   }
 
   @computed public get gifsToShowInGrid(): Gif[] {
-    if (this.searchResultsGifs.length) {
+    if (this.searchTerm !== '') {
       return this.searchResultsGifs;
     }
 

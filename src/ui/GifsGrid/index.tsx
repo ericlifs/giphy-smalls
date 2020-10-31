@@ -16,6 +16,10 @@ const GifsGrid: React.FC<GifsGridProps> = (props: GifsGridProps) => {
       return <LoadingSpinner />;
     }
 
+    if (props.gifs.length === 0) {
+      return <h3 className="gifs-grid__no-results">We could not find any gif :(</h3>;
+    }
+
     return (
       <main className="gifs-grid__content">
         {props.gifs.map((gif: Gif) => (
