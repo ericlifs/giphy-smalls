@@ -5,16 +5,17 @@ import './index.scss';
 
 interface FavButtonProps {
   active: boolean;
+  onPress: () => void;
 }
 
-const FavButton: React.FC<FavButtonProps> = (props: FavButtonProps) => {
-  const imgSrc = props.active ? FavFilled : FavOutline;
+const FavButton: React.FC<FavButtonProps> = ({ active, onPress }: FavButtonProps) => {
+  const imgSrc = active ? FavFilled : FavOutline;
 
   return (
-    <button className="fav-button">
+    <button className="fav-button" onClick={onPress}>
       <img className="fav-button__icon" src={imgSrc} />
     </button>
   );
 };
 
-export default FavButton;
+export default React.memo(FavButton);

@@ -1,3 +1,5 @@
+import { Gif } from './gifs';
+
 export interface Favorites {
-  [key: string]: boolean;
+  [key: string]: Gif;
 }
