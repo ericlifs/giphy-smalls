@@ -1,7 +1,5 @@
 import React from 'react';
-import Favorites from 'components/Favorites';
-import SearchBar from 'components/SearchBar';
-import SearchResultsGifs from 'components/SearchResultsGifs';
+import { Favorites, SearchBar, SearchResultsGifs } from 'components';
 import 'styles/index.scss';
 
 function App() {
