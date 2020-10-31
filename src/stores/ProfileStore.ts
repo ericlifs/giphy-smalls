@@ -2,13 +2,20 @@
 import { createContext } from 'react';
 import { action, makeAutoObservable } from 'mobx';
 import { Favorites, Gif } from 'interfaces';
+import { create, persist } from 'mobx-persist';
+
+const hidrate = create({
+  storage: localStorage,
+  jsonify: true,
+});
 
 class ProfileStore {
   constructor() {
     makeAutoObservable(this);
+    hidrate('profileStore', this);
   }
 
-  public favorites: Favorites = {};
+  @persist('object') public favorites: Favorites = {};
 
   /**
    * Adds or removes gif from favorites lists
