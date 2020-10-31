@@ -1,0 +1,15 @@
+.fav-button {
+  border-radius: 50%;
+  background: black;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+  }
+}
