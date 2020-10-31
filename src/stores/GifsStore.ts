@@ -30,7 +30,7 @@ class GifsStore {
       return `Gifs for ${this.searchTerm}`;
     }
 
-    if (this.searchTerm === '') {
+    if (this.searchTerm === '' && !this.isFetching) {
       return 'Trending gifs';
     }
 
