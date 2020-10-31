@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
 import { observer } from 'mobx-react-lite';
 import React, { useCallback, useContext, useMemo } from 'react';
-import { Gif } from '../../interfaces/gifs';
-import ProfileStoreContext from '../../stores/ProfileStore';
-import FavButton from '../FavButton';
+import { Gif } from 'interfaces/gifs';
+import ProfileStoreContext from 'stores/ProfileStore';
+import FavButton from 'ui/FavButton';
 import './index.scss';
 
 interface GifImageProps {

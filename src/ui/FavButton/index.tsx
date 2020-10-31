@@ -1,6 +1,6 @@
 import React from 'react';
-import FavFilled from '../../assets/fav-filled.png';
-import FavOutline from '../../assets/fav-outline.png';
+import FavFilled from 'assets/fav-filled.png';
+import FavOutline from 'assets/fav-outline.png';
 import './index.scss';
 
 interface FavButtonProps {

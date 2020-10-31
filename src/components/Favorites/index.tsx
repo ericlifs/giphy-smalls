@@ -1,8 +1,8 @@
 import { observer } from 'mobx-react-lite';
 import React, { useContext, useMemo } from 'react';
-import { Gif } from '../../interfaces/gifs';
-import ProfileStoreContext from '../../stores/ProfileStore';
-import GifImage from '../../ui/GifImage';
+import { Gif } from 'interfaces/gifs';
+import ProfileStoreContext from 'stores/ProfileStore';
+import GifImage from 'ui/GifImage';
 import './index.scss';
 
 const Favorites: React.FC = () => {
