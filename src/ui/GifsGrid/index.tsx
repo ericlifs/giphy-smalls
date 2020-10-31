@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 import { Gif } from 'interfaces';
-import GifImage from 'ui/GifImage';
-import LoadingSpinner from 'ui/LoadingSpinner';
+import { GifImage, LoadingSpinner } from 'ui';
 import './index.scss';
 
 interface GifsGridProps {

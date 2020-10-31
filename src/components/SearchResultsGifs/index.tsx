@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite';
 import React, { useContext, useEffect } from 'react';
 import { GifsStoreContext } from 'stores';
-import GifsGrid from 'ui/GifsGrid';
+import { GifsGrid } from 'ui';
 
 const SearchResultsGifs: React.FC = () => {
   const gifsStore = useContext(GifsStoreContext);

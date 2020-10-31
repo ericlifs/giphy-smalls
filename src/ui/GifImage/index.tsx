@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite';
 import React, { useCallback, useContext, useMemo } from 'react';
 import { Gif } from 'interfaces';
 import { ProfileStoreContext } from 'stores';
-import FavButton from 'ui/FavButton';
+import { FavButton } from 'ui';
 import './index.scss';
 
 interface GifImageProps {
