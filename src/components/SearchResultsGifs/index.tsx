@@ -3,7 +3,7 @@ import React, { useContext, useEffect } from 'react';
 import GifsStoreContext from '../../stores/GifsStore';
 import GifsGrid from '../../ui/GifsGrid';
 
-const TrendingGifs: React.FC = () => {
+const SearchResultsGifs: React.FC = () => {
   const gifsStore = useContext(GifsStoreContext);
 
   useEffect(() => {
@@ -19,4 +19,4 @@ const TrendingGifs: React.FC = () => {
   );
 };
 
-export default observer(TrendingGifs);
+export default observer(SearchResultsGifs);
