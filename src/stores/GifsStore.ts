@@ -1,8 +1,7 @@
 import { createContext } from 'react';
 import { action, computed, makeAutoObservable } from 'mobx';
 import api, { API_CONFIG } from 'api';
-import { FetchStatus } from 'interfaces/fetchStatus';
-import { Gif } from 'interfaces/gifs';
+import { FetchStatus, Gif } from 'interfaces';
 
 class GifsStore {
   constructor() {

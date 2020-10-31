@@ -1,5 +1,7 @@
-import { Gif } from 'interfaces/gifs';
+import Gif from './gif';
 
-export interface Favorites {
+interface Favorites {
   [key: string]: Gif;
 }
+
+export default Favorites;

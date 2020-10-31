@@ -1,7 +1,9 @@
 /* eslint-disable no-unused-vars */
-export enum FetchStatus {
+enum FetchStatus {
   Initial,
   Fetching,
   Fetched,
   Error,
 }
+
+export default FetchStatus;

@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import React, { useContext, useMemo } from 'react';
-import { Gif } from 'interfaces/gifs';
+import { Gif } from 'interfaces';
 import ProfileStoreContext from 'stores/ProfileStore';
 import GifImage from 'ui/GifImage';
 import './index.scss';

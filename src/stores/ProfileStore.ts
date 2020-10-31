@@ -1,8 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { createContext } from 'react';
 import { action, makeAutoObservable } from 'mobx';
-import { Favorites } from 'interfaces/favorites';
-import { Gif } from 'interfaces/gifs';
+import { Favorites, Gif } from 'interfaces';
 
 class ProfileStore {
   constructor() {

@@ -1,4 +1,4 @@
-export interface Gif {
+interface Gif {
   images: {
     original: {
       url: string;
@@ -7,3 +7,5 @@ export interface Gif {
   id: string;
   title: string;
 }
+
+export default Gif;
