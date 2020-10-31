@@ -1,0 +1,24 @@
+.favorites {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__content {
+    display: grid;
+    grid-gap: 20px;
+    overflow-x: auto;
+    align-items: center;
+    grid-auto-flow: column;
+    grid-template-rows: 140px;
+    grid-auto-columns: minmax(160px, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  &__no-favs {
+    grid-column: span 2;
+  }
+}
