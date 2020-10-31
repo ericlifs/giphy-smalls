@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
-import useDebounce from 'hooks/useDebounce';
+import { useDebounce } from 'hooks';
 import { GifsStoreContext } from 'stores';
 import './index.scss';
 
