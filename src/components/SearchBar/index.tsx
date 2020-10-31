@@ -9,16 +9,20 @@ const SearchBar: React.FC = () => {
   const [term, setTerm] = useState<string>('');
   const debouncedTerm = useDebounce<string>(term, 600);
 
+  // Called when the input value changed
   const onValueChange = (ev: ChangeEvent<HTMLInputElement>) => {
     setTerm(ev.target.value);
   };
 
+  // This will be called when the term changes
   useEffect(() => {
+    // If the input value is now empty we clear the previous results
     if (term === '') {
       gifsStore.clearSearchResults();
     }
   }, [term]);
 
+  // This will be called when the deboucedTerm changes (no the term itself)
   useEffect(() => {
     const trimmedTerm = debouncedTerm.trim();
 

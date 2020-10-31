@@ -10,11 +10,19 @@ class ProfileStore {
 
   public favorites: Favorites = {};
 
+  /**
+   * Adds or removes gif from favorites lists
+   * @param {Gif} gif - Gif object which will be added/removed from favorites list
+   */
   @action
   public toggleFavorite(gif: Gif) {
     this.favorites = this.getNewFavoritesStateForGif(gif);
   }
 
+  /**
+   * Returns new version of the favorites list with the gif added/removed from the favorites list
+   * @param {Gif} gif - Gif object which will be added/removed from favorites list
+   */
   protected getNewFavoritesStateForGif(gif: Gif): Favorites {
     if (this.favorites[gif.id]) {
       const { [gif.id]: faved, ...otherFavorites } = this.favorites;

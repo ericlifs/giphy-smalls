@@ -45,6 +45,10 @@ class GifsStore {
     return this.trendingGifs;
   }
 
+  /**
+   * Fetch giphy trending gifs.
+   * @async
+   */
   @action
   public async fetchTrendingGifs(): Promise<void> {
     this.fetchTrendingStatus = FetchStatus.Fetching;
@@ -59,6 +63,9 @@ class GifsStore {
     }
   }
 
+  /**
+   * Clear current's search results saved in the store and return the search state to the initial one.
+   */
   @action
   public clearSearchResults(): void {
     this.fetchSearchStatus = FetchStatus.Initial;
@@ -66,6 +73,11 @@ class GifsStore {
     this.searchTerm = '';
   }
 
+  /**
+   * Search giphy gifs by term.
+   * @async
+   * @param {string} query - term used for search
+   */
   @action
   public async searchGifsByTerm(query: string): Promise<void> {
     this.fetchSearchStatus = FetchStatus.Fetching;

@@ -5,6 +5,12 @@ interface QueryParams {
 }
 
 class Api {
+  /**
+   * Performs a GET method request.
+   * @async
+   * @param {string} endpoint - Giphy endpoint
+   * @param {QueryParams} params - An object which each <key, param> represents the param name and value
+   */
   async get<T>(endpoint: string, params: QueryParams = {}): Promise<T> {
     const mappedParams = Object.entries(params)
       .map(([key, value]) => `&${key}=${value}`)

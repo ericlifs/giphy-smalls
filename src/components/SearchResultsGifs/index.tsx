@@ -6,6 +6,7 @@ import { GifsGrid } from 'ui';
 const SearchResultsGifs: React.FC = () => {
   const gifsStore = useContext(GifsStoreContext);
 
+  // When the component gets mounted we fetch the trending results
   useEffect(() => {
     gifsStore.fetchTrendingGifs();
   }, []);

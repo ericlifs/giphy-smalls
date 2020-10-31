@@ -14,10 +14,13 @@ interface GifImageProps {
 const GifImage: React.FC<GifImageProps> = ({ gif, onImageClicked }: GifImageProps) => {
   const profileStore = useContext(ProfileStoreContext);
 
-  const isFavorite = useMemo(() => profileStore.favorites[gif.id] !== undefined, [
-    profileStore.favorites,
-  ]);
+  //prettier-ignore
+  const isFavorite = useMemo(() => (
+    profileStore.favorites[gif.id] !== undefined
+  ), [profileStore.favorites]);
 
+  // When the FavButton gets clicked we call the toggleFavorite function which
+  // will add/remove the gif the favorites list
   const toggleGifFavorited = useCallback(() => {
     profileStore.toggleFavorite(gif);
   }, [gif]);
