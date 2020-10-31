@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite';
 import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
 import useDebounce from 'hooks/useDebounce';
-import GifsStoreContext from 'stores/GifsStore';
+import { GifsStoreContext } from 'stores';
 import './index.scss';
 
 const SearchBar: React.FC = () => {
