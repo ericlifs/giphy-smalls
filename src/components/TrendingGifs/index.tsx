@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import React, { useContext, useEffect } from 'react';
-import { GifsStoreContext } from '../../stores/GifsStore';
+import GifsStoreContext from '../../stores/GifsStore';
 import GifsGrid from '../../ui/GifsGrid';
 
 const TrendingGifs: React.FC = () => {

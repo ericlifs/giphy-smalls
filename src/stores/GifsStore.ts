@@ -83,4 +83,4 @@ class GifsStore {
   }
 }
 
-export const GifsStoreContext = createContext(new GifsStore());
+export default createContext(new GifsStore());
