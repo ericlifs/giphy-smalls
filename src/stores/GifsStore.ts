@@ -31,15 +31,11 @@ class GifsStore {
       return `Gifs for ${this.searchTerm}`;
     }
 
-    if (this.fetchSearchStatus === FetchStatus.Fetching) {
-      return `Fetching gifs for ${this.searchTerm}`;
-    }
-
-    if (this.fetchTrendingStatus === FetchStatus.Fetched) {
+    if (!this.searchTerm) {
       return 'Trending gifs';
     }
 
-    return 'Fetching trending gifs';
+    return '';
   }
 
   @computed public get gifsToShowInGrid(): Gif[] {
