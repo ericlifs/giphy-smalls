@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { observer } from 'mobx-react-lite';
 import React, { useCallback, useContext, useMemo } from 'react';
 import { Gif } from '../../interfaces/gifs';
@@ -7,9 +8,10 @@ import './index.scss';
 
 interface GifImageProps {
   gif: Gif;
+  onImageClicked: (gif: Gif) => void;
 }
 
-const GifImage: React.FC<GifImageProps> = ({ gif }: GifImageProps) => {
+const GifImage: React.FC<GifImageProps> = ({ gif, onImageClicked }: GifImageProps) => {
   const profileStore = useContext(ProfileStoreContext);
 
   const isFavorite = useMemo(() => profileStore.favorites[gif.id] !== undefined, [
@@ -23,6 +25,7 @@ const GifImage: React.FC<GifImageProps> = ({ gif }: GifImageProps) => {
   return (
     <div className="gif-image" key={gif.images.original.url}>
       <img
+        onClick={() => onImageClicked(gif)}
         className="gif-image__gif"
         src={gif.images.original.url}
         alt={gif.title}

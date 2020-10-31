@@ -11,6 +11,10 @@ interface GifsGridProps {
 }
 
 const GifsGrid: React.FC<GifsGridProps> = (props: GifsGridProps) => {
+  const onImageClicked = (gif: Gif) => {
+    window.open(gif.images.original.url, '_blank');
+  };
+
   const GifsGridContent = useMemo(() => {
     if (props.loading) {
       return <LoadingSpinner />;
@@ -23,7 +27,7 @@ const GifsGrid: React.FC<GifsGridProps> = (props: GifsGridProps) => {
     return (
       <main className="gifs-grid__content">
         {props.gifs.map((gif: Gif) => (
-          <GifImage key={gif.id} gif={gif} />
+          <GifImage key={gif.id} gif={gif} onImageClicked={onImageClicked} />
         ))}
       </main>
     );

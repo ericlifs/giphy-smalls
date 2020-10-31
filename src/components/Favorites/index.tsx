@@ -1,5 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import React, { useContext, useMemo } from 'react';
+import { Gif } from '../../interfaces/gifs';
 import ProfileStoreContext from '../../stores/ProfileStore';
 import GifImage from '../../ui/GifImage';
 import './index.scss';
@@ -7,12 +8,16 @@ import './index.scss';
 const Favorites: React.FC = () => {
   const profileStore = useContext(ProfileStoreContext);
 
+  const onImageClicked = (gif: Gif) => {
+    window.open(gif.images.original.url, '_blank');
+  };
+
   const FavoritesContent = useMemo(() => {
     const favoritesIds = Object.keys(profileStore.favorites);
 
     if (favoritesIds.length > 0) {
       return favoritesIds.map((id: string) => (
-        <GifImage key={id} gif={profileStore.favorites[id]} />
+        <GifImage onImageClicked={onImageClicked} key={id} gif={profileStore.favorites[id]} />
       ));
     }
 
