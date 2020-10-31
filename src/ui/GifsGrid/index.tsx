@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { Gif } from '../../interfaces/gifs';
+import LoadingSpinner from '../LoadingSpinner';
 import './index.scss';
 
 interface GifsGridProps {
@@ -11,7 +12,7 @@ interface GifsGridProps {
 const GifsGrid: React.FC<GifsGridProps> = (props: GifsGridProps) => {
   const GifsGridContent = useMemo(() => {
     if (props.loading) {
-      return <h1>Loading</h1>;
+      return <LoadingSpinner />;
     }
 
     return (
@@ -31,7 +32,7 @@ const GifsGrid: React.FC<GifsGridProps> = (props: GifsGridProps) => {
 
   return (
     <section className="gifs-grid">
-      <h1 className="gifs-grid__title">{props.title}</h1>
+      {props.title && <h1 className="gifs-grid__title">{props.title}</h1>}
       {GifsGridContent}
     </section>
   );
