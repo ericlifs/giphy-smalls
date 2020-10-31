@@ -8,7 +8,9 @@ const SearchResultsGifs: React.FC = () => {
 
   // When the component gets mounted we fetch the trending results
   useEffect(() => {
-    gifsStore.fetchTrendingGifs();
+    if (gifsStore.trendingGifs.length === 0) {
+      gifsStore.fetchTrendingGifs();
+    }
   }, []);
 
   return (
