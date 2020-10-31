@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { Gif } from '../../interfaces/gifs';
-import FavButton from '../FavButton';
+import GifImage from '../GifImage';
 import LoadingSpinner from '../LoadingSpinner';
 import './index.scss';
 
@@ -19,15 +19,7 @@ const GifsGrid: React.FC<GifsGridProps> = (props: GifsGridProps) => {
     return (
       <main className="gifs-grid__content">
         {props.gifs.map((gif: Gif) => (
-          <div className="gifs-grid__item" key={gif.images.original.url}>
-            <img
-              className="gifs-grid__gif"
-              src={gif.images.original.url}
-              alt={gif.title}
-              loading="lazy"
-            />
-            <FavButton active={false} />
-          </div>
+          <GifImage key={gif.id} gif={gif} />
         ))}
       </main>
     );
